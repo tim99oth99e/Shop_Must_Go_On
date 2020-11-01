@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_cleanup'
     'crispy_forms',
     'main_app.apps.MainAppConfig',
     'phonenumber_field',
