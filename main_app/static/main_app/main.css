@@ -1,0 +1,67 @@
+.category {
+    color:black;
+    font-family: 'Roboto';
+    font-weight:500;
+    font-size:15pt;
+}
+
+.category-selected {
+    text-decoration: underline solid #00FFA6 2.5px;
+    text-underline-offset: 4px;
+}
+
+.category-selected:hover {
+    text-decoration: underline solid #00FFA6 2.5px;
+    text-underline-offset: 4px;
+}
+
+
+.category:hover{
+    color:#6e6e6e;
+}
+
+.title-shop-name{
+    color:black;
+    font-family: 'Roboto';
+    font-weight:500;
+    font-size:30pt;
+}
+
+.city_name{
+    font-family:'Roboto';
+    font-size:18pt;
+    background-color: rgba(255,255,255,.25);
+    border-radius:5px;
+}
+
+.city_name:hover{
+    background-color: rgba(255,255,255,.35);
+    text-decoration: none;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.website-link{
+    font-family: 'Roboto';
+    font-size:20px;
+    color:black;
+}
+
+.website-link:hover{
+    color:#00FFA6;
+    text-decoration: none;
+    transition: color 0.1s ease-in-out;
+}
+
+.back-arrow{
+    font-family:'Roboto';
+    font-size:13pt;
+    color:black;
+    width:200px;
+    border-radius:5px;
+    text-decoration: none;
+}
+
+.back-arrow:hover{
+    background-color:#ededed;
+    transition: background-color 0.1s ease-in-out;
+}

@@ -1,0 +1,27 @@
+{% extends "main_app/base_2.html" %}
+{% load static %}
+
+{% block title %}
+    <div class="container">
+        <h1 class="text-center mx-auto" style="font-family: 'redwingmedium'; color:white"> En savoir plus </h1>
+    </div>
+{% endblock title %}
+
+{% block content %}
+
+    <div class="container mt-5" style="font-family: 'Roboto'; font-size:15pt;">
+        <p>
+            Ce projet a pour objectif d'<span style="font-weight:500">aider les commerces fermés</span> pendant le confinement à <span style="font-weight:500">continuer leur activité</span>. <br>
+            Ce site référence les différentes boutiques des villes ajoutées et des informations permettant de commander chez eux.
+        </p>
+        <p>
+            L'inscription de votre boutique sur ce site est entièrement <span style="font-weight:500">gratuite</span>.
+        </p>
+          <hr class="my-4">
+        <small>
+            Faîtes-nous part de vos remarques par mail :
+            <a href="mailto:contact@shop-must-go-on.fr">contact@shop-must-go-on.fr</a>
+        </small>
+    </div>
+
+{% endblock content %}

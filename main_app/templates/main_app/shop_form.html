@@ -1,0 +1,158 @@
+{% extends "main_app/base_2.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+    <div class="container">
+        <h1 class="text-center mx-auto" style="font-family: 'redwingmedium'; color:white"> Vous souhaitez inscrire votre boutique </h1>
+    </div>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container mt-5" style="font-family: 'roboto'">
+    <div class="content-section">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Veuillez renseigner les informations suivantes</legend>
+                {{ form.shop_name|as_crispy_field }}
+                {{ form.shop_image|as_crispy_field }}
+                <small class="form-text text-muted mb-4">Ajoutez une image de la devanture de votre commerce.</small>
+
+
+                {{ form.address|as_crispy_field }}
+                {{ form.shop_city|as_crispy_field }}
+
+                {{ form.shop_category|as_crispy_field }}
+
+                {{ form.shop_website_link|as_crispy_field }}
+
+                {{ form.phone_number|as_crispy_field }}
+                {{ form.email|as_crispy_field }}
+
+                {{ form.how_to_order|as_crispy_field }}
+                <small class="form-text text-muted">
+                    Indiquez à vos clients comment ils peuvent commander vos produits. <br>
+                </small>
+
+                <p class="form-text">
+                    Voici plusieurs exemples pour vous aider :
+                </p>
+
+                <div class="col-12 mb-3">
+
+                <!-- Modal e-commerce -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#ecommerceModal">
+                  Exemple si vous avez un site de e-commerce
+                </button>
+
+                <!-- Modal-->
+                <div class="modal fade" id="ecommerceModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Comment commander</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body" id="ecommerceText" style="white-space: pre-wrap;">Vous pouvez commander et payer directement sur notre site internet.
+
+Vos achats vous seront livrés chez vous.</div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal" onclick="copyText('ecommerceText')">Utiliser / modifier ce texte</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                </div>
+                <div class="col-12 mb-3">
+
+                <!-- Modal site vitrine -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#showcaseSiteModal">
+                  Exemple si vous avez un site "vitrine"
+                </button>
+
+                <!-- Modal-->
+                <div class="modal fade" id="showcaseSiteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Comment commander ?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body" id="showcaseSiteText" style="white-space: pre-wrap;">1. Choisissez vos produits sur le site vitrine, devant la boutique ou par téléphone.
+
+2. Envoyez-nous votre commande par mail ou glissez le bon de commande sous la porte de la boutique.
+
+3. Nous vous rappellerons quand la commande sera prête et vous pourrez passer la chercher le mardi matin ou le samedi matin, de 9h à 13h.
+
+4. Préparez votre règlement. Chèque ou espèces pour le moment.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal" onclick='copyText("showcaseSiteText")'>
+                            Utiliser / modifier ce texte
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+                <div class="col-12 mb-3">
+
+                <!-- Modal pas de site -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#noSiteModal">
+                  Exemple si vous n'avez pas de site internet.
+                </button>
+
+                <!-- Modal-->
+                <div class="modal fade" id="noSiteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Comment commander ?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body" id="noSiteText" style="white-space: pre-wrap;">1. Choisissez vos produits devant la boutique ou par téléphone.
+
+2. Envoyez-nous votre commande par mail ou glissez un bon de commande sous la porte de la boutique.
+
+3. Nous vous rappellerons quand la commande sera prête et vous pourrez passer la chercher le mardi matin ou le samedi matin, de 9h à 13h.
+
+4. Préparez votre règlement en chèques, espèces.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal" onclick='copyText("noSiteText")'>
+                            Utiliser / modifier ce texte
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+</div>
+        <script>
+            function copyText(textId) {
+              var text = document.getElementById(textId).textContent;
+              document.getElementById( "{{ form.how_to_order.id_for_label }}" ).value = text;
+            }
+        </script>
+
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Envoyer les informations</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

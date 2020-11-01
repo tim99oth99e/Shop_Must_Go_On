@@ -1,0 +1,5 @@
+Django==3.1.2
+django-cleanup==5.1.0
+django-phonenumber-field[phonenumberslite]
+django-crispy-forms
+django-cleanup

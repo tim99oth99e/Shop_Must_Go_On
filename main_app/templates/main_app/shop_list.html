@@ -1,0 +1,65 @@
+{% extends "main_app/base_2.html" %}
+
+{% block title %}
+    <div class="container">
+        <h1 class="text-center mx-auto" style="font-family: 'redwingmedium'; color:white">Les commerces de <span style="color:#00FFA6">{{ city_name }}</span> </h1>
+    </div>
+{% endblock title %}
+
+{% block content %}
+    <div class="pt-3" style="background-color:white; margin-bottom:0; height: 100%;">
+
+        <div class="mx-5">
+
+            <ul class="nav">
+                <li class="nav-item">
+            {% if selected_category == "all" %}
+                <a class="nav-link active category category-selected" href="{% url 'shop_list' city_name 'all' %}">Tous les commerces</a>
+            {% else %}
+                <a class="nav-link active category" href="{% url 'shop_list' city_name 'all' %}">Tous les commerces</a>
+            {% endif %}
+                </li>
+
+
+            {% for cat in category %}
+              <li class="nav-item">
+                {% if selected_category == cat.0 %}
+                    <a class="nav-link category category-selected" href="{% url 'shop_list' city_name cat.0 %}">{{ cat.0 }}</a>
+                {% else %}
+                    <a class="nav-link category" href="{% url 'shop_list' city_name cat.0 %}">{{ cat.0 }}</a>
+                {% endif %}
+              </li>
+            {% endfor %}
+
+        </ul>
+
+
+
+        {% if object_list %}
+        <div class="card-deck">
+
+            {% for shop in object_list %}
+                <a class="text-center mt-5" style="font-family:'Roboto'; font-weight:500; font-size:20pt; color:white" href="{% url 'shop_detail' city_name shop.pk %}">
+                    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('{{ shop.shop_image.url }}');
+                                              background-position: center; background-repeat: no-repeat;
+                                              background-size: cover; width: 200px; height: 200px;
+                                              border-radius:10px; text-align: center;">
+                        <div class="my-auto" style="display: inline-block; vertical-align: middle; line-height: normal;">{{ shop.shop_name }}</div>
+                    </div>
+                </a>
+
+            {% endfor %}
+
+            </div>
+
+        </div>
+
+        {% else %}
+            <p class="text-center pt-5" style="font-family:Roboto; font-size:20pt; font-weight:500;"> Les commerces de cette ville n'ont pas encore été répertoriés </p>
+        {% endif %}
+
+
+
+    </div>
+
+{% endblock content %}
