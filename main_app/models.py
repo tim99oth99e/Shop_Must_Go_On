@@ -4,14 +4,14 @@ from django.urls import reverse
 
 
 class Category(models.Model):
-    category_name = models.CharField(max_length=200)
+    category_name = models.CharField(max_length=200, verbose_name="Nom de la catégorie")
 
     def __str__(self):
         return self.category_name
 
 
 class City(models.Model):
-    city_name = models.CharField(max_length=200)
+    city_name = models.CharField(max_length=200, verbose_name="Nom de la ville")
 
     def __str__(self):
         return self.city_name
