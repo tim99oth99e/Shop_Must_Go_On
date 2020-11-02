@@ -8,28 +8,33 @@
     <div class="pt-3" style="background-color:white; margin-bottom:0; height: 100%;">
 
         <div class="mx-5">
-
-            <ul class="nav">
-                <li class="nav-item">
-            {% if selected_category == "all" %}
-                <a class="nav-link active category category-selected" href="{% url 'shop_list' city_name 'all' %}">Tous les commerces</a>
-            {% else %}
-                <a class="nav-link active category" href="{% url 'shop_list' city_name 'all' %}">Tous les commerces</a>
-            {% endif %}
-                </li>
-
-            {% for cat in category %}
-              <li class="nav-item">
-                {% if selected_category == cat.0 %}
-                    <a class="nav-link category category-selected" href="{% url 'shop_list' city_name cat.0 %}">{{ cat.0 }}</a>
+<!--        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">-->
+<!--              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                <span class="navbar-toggler-icon"></span>-->
+<!--              </button>-->
+<!--            <div class="collapse navbar-collapse" id="navbarNavDropdown">-->
+                <ul class="nav mt-2">
+                    <li class="nav-item">
+                {% if selected_category == "all" %}
+                    <a class="nav-link active category category-selected" href="{% url 'shop_list' city_name 'all' %}">Tous les commerces</a>
                 {% else %}
-                    <a class="nav-link category" href="{% url 'shop_list' city_name cat.0 %}">{{ cat.0 }}</a>
+                    <a class="nav-link active category" href="{% url 'shop_list' city_name 'all' %}">Tous les commerces</a>
                 {% endif %}
-              </li>
-            {% endfor %}
+                    </li>
 
-        </ul>
+                {% for cat in category %}
+                  <li class="nav-item">
+                    {% if selected_category == cat.0 %}
+                        <a class="nav-link category category-selected" href="{% url 'shop_list' city_name cat.0 %}">{{ cat.0 }}</a>
+                    {% else %}
+                        <a class="nav-link category" href="{% url 'shop_list' city_name cat.0 %}">{{ cat.0 }}</a>
+                    {% endif %}
+                  </li>
+                {% endfor %}
 
+                </ul>
+<!--            </div>-->
+<!--        </nav>-->
         </div>
 
             {% if object_list %}
