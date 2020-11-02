@@ -91,15 +91,25 @@
     font-style: italic;
 }
 
+.square-shop{
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius:10px;
+    text-align: center;
+}
 
 
-@media (min-width: 1000px) {
+
+@media (min-width: 992px) {
 .title-landing{
     font-size: 3.8em; /*1rem = 16px*/
 }
 
 .logo-landing{
-    height:75px;
+    height:80px;
 }
 
 .subtitle-landing{
@@ -118,4 +128,16 @@
     font-size:2.5em;
 }
 
+.square-shop{
+    width: 170px;
+    height: 170px;
+}
+}
+
+
+@media (min-width: 1200px) {
+.square-shop{
+    width: 185px;
+    height: 185px;
+}
 }

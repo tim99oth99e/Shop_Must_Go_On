@@ -30,32 +30,29 @@
 
         </ul>
 
+        </div>
 
-
-        {% if object_list %}
-        <div class="card-deck justify-content-around">
+            {% if object_list %}
+            <div class="row mt-5 mx-3">
 
             {% for shop in object_list %}
-                <a class="text-center mt-5" style="font-family:'Roboto'; font-weight:500; font-size:20pt; color:white" href="{% url 'shop_detail' city_name shop.pk %}">
-                    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('{{ shop.shop_image.url }}');
-                                              background-position: center; background-repeat: no-repeat;
-                                              background-size: cover; width: 200px; height: 200px;
-                                              border-radius:10px; text-align: center;">
-                        <div class="my-auto" style="display: inline-block; vertical-align: middle; line-height: normal;">{{ shop.shop_name }}</div>
-                    </div>
-                </a>
-
+                <div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-4" style="justify-content: center; display:grid">
+                    <a class="text-center mx-3" style="font-family:'Roboto'; font-weight:500; font-size:20pt; color:white" href="{% url 'shop_detail' city_name shop.pk %}">
+                        <div class="card square-shop" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('{{ shop.shop_image.url }}');">
+                            <div class="my-auto" style="display: inline-block; vertical-align: middle; line-height: normal;">{{ shop.shop_name }}</div>
+                        </div>
+                    </a>
+                </div>
             {% endfor %}
 
             </div>
 
-        </div>
 
         {% else %}
             <p class="text-center pt-5" style="font-family:Roboto; font-size:20pt; font-weight:500;"> Les commerces de cette ville n'ont pas encore été répertoriés </p>
         {% endif %}
 
-
+    </div>
 
     </div>
 
