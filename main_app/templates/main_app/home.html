@@ -1,4 +1,6 @@
 {% extends "main_app/base.html" %}
+{% load static %}
+
 
 {% block content %}
 
@@ -16,14 +18,14 @@
     {% endif %}
 
     <div class="container mt-5">
-        <h1 style="color:#00FFA6; font-family:'redwingmedium'; font-size:45pt" class="text-center">Commandez dans les boutiques de votre ville.</h1>
-        <h2 class="mt-2" style="color:white; font-family: 'Roboto', sans-serif; font-size:17pt; font-weight:400;">Continuez à acheter chez les commerçants autour de chez vous pendant le confinement, depuis chez vous.</h2>
+        <h1 style="color:#00FFA6; font-family:'redwingmedium'" class="text-center title-landing">Commandez dans les boutiques de votre ville.</h1>
+        <h2 class="mt-2 text-center subtitle-landing">Pendant le confinement, continuez à acheter chez les commerçants autour de chez vous.</h2>
 
         <h2 class="text-center mt-5 pt-5" style="color:white; font-family:'redwingmedium'; font-size:28pt"> Où habitez-vous ?</h2>
-        <p class="text-center text-white" style="font-family:'Roboto'; font-size:13.5pt; font-style: italic;"> Seules les boutiques des villes suivantes sont répertoriées pour l'instant. </p>
-        <div class="text-center mt-4">
+        <p class="text-center text-white info-text"> Seules les boutiques des villes suivantes sont répertoriées pour l'instant. </p>
+        <div class="text-center mt-3 row justify-content-center">
             {% for city in object_list %}
-                <a class="mr-3 text-white py-1 px-2 city_name" href="{% url 'shop_list' city.city_name 'all' %}">{{city}}</a>
+                <a class="text-white mx-2 py-1 px-2 city_name" href="{% url 'shop_list' city.city_name 'all' %}">{{city}}</a>
             {% endfor %}
         </div>
     </div>

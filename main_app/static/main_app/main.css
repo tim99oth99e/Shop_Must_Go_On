@@ -29,7 +29,7 @@
 
 .city_name{
     font-family:'Roboto';
-    font-size:18pt;
+    font-size:15pt;
     background-color: rgba(255,255,255,.25);
     border-radius:5px;
 }
@@ -64,4 +64,58 @@
 .back-arrow:hover{
     background-color:#ededed;
     transition: background-color 0.1s ease-in-out;
+}
+
+.title-landing{
+    font-size: 2.4em; /*1rem = 16px*/
+}
+
+.title-page{
+    font-size:2em;
+}
+
+.subtitle-landing{
+    font-size: 14pt; /*1rem = 16px*/
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-weight:400;
+}
+
+.logo-landing{
+    height:65px;
+}
+
+.info-text{
+    font-family:'Roboto';
+    font-size:11pt;
+    font-style: italic;
+}
+
+
+
+@media (min-width: 1000px) {
+.title-landing{
+    font-size: 3.8em; /*1rem = 16px*/
+}
+
+.logo-landing{
+    height:75px;
+}
+
+.subtitle-landing{
+    font-size: 17pt; /*1rem = 16px*/
+}
+
+.info-text{
+    font-size:13.5pt;
+}
+
+.city_name{
+    font-size:18pt;
+}
+
+.title-page{
+    font-size:2.5em;
+}
+
 }

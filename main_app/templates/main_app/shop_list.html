@@ -1,9 +1,7 @@
 {% extends "main_app/base_2.html" %}
 
 {% block title %}
-    <div class="container">
-        <h1 class="text-center mx-auto" style="font-family: 'redwingmedium'; color:white">Les commerces de <span style="color:#00FFA6">{{ city_name }}</span> </h1>
-    </div>
+        <h1 class="text-center mb-0 title-page" style="font-family: 'redwingmedium'; color:white">Les commerces de <span style="color:#00FFA6">{{ city_name }}</span> </h1>
 {% endblock title %}
 
 {% block content %}
@@ -20,7 +18,6 @@
             {% endif %}
                 </li>
 
-
             {% for cat in category %}
               <li class="nav-item">
                 {% if selected_category == cat.0 %}
@@ -36,7 +33,7 @@
 
 
         {% if object_list %}
-        <div class="card-deck">
+        <div class="card-deck justify-content-around">
 
             {% for shop in object_list %}
                 <a class="text-center mt-5" style="font-family:'Roboto'; font-weight:500; font-size:20pt; color:white" href="{% url 'shop_detail' city_name shop.pk %}">
