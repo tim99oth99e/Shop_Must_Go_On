@@ -1,6 +1,13 @@
 {% extends "main_app/base_2.html" %}
 {% load static %}
 
+{% block seo_info %}
+    <title>Comment commander chez {{object.shop_name}} pendant le confinement ?</title>
+
+    <meta name="description" content="Trouvez toutes les informations pour continuer à commander chez {{object.shop_name}} à {{city_name}}, même pendant cette période.">
+    <meta name="keywords" content="{{object.shop_name}}, {{city_name}}, {{ object.shop_category }}, commerce, confinement, commander, proximité, Shop must go on">
+{% endblock seo_info  %}
+
 {% block title %}
         <h1 class="text-center mx-auto " style="font-family: 'redwingmedium'; color:white"> {{ object.shop_name }} </h1>
 {% endblock title %}

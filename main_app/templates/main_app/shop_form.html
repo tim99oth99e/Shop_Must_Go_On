@@ -2,6 +2,12 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block seo_info %}
+    <title>Vous souhaitez communiquer sur comment commander dans votre commerce / restaurant pendant le confinement ?</title>
+
+    <meta name="description" content="Créez une page gratuitement pour votre commerce, et indiquez à vos clients comment commander chez vous pendant cette période tout en augmentant votre visibilité.">
+    <meta name="keywords" content="inscription, gratuit, visibilité, commerces, boutiques, confinement, restaurants, commander, proximité">
+{% endblock seo_info  %}
 
 {% block title %}
         <h1 class="text-center mx-auto" style="font-family: 'redwingmedium'; color:white"> Vous souhaitez inscrire votre boutique </h1>
@@ -90,9 +96,8 @@ Vos achats vous seront livrés chez vous.</div>
 
 2. Envoyez-nous votre commande par mail ou glissez le bon de commande sous la porte de la boutique.
 
-3. Nous vous rappellerons quand la commande sera prête et vous pourrez passer la chercher le mardi matin ou le samedi matin, de 9h à 13h.
+3. Nous vous rappellerons quand la commande sera prête et vous pourrez passer la chercher aux horaires habituels.
 
-4. Préparez votre règlement. Chèque ou espèces pour le moment.
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-light" data-dismiss="modal" onclick='copyText("showcaseSiteText")'>
@@ -126,9 +131,7 @@ Vos achats vous seront livrés chez vous.</div>
 
 2. Envoyez-nous votre commande par mail ou glissez un bon de commande sous la porte de la boutique.
 
-3. Nous vous rappellerons quand la commande sera prête et vous pourrez passer la chercher [ex: le mardi matin] ou [ex: le samedi matin, de 9h à 13h].
-
-4. Préparez votre règlement en chèques, espèces ou carte bleue.
+3. Nous vous rappellerons quand la commande sera prête et vous pourrez passer la chercher aux horaires habituels.
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-light" data-dismiss="modal" onclick='copyText("noSiteText")'>

@@ -4,6 +4,14 @@
 <html lang="fr">
 <head>
     {% block header %}
+
+    <title>Comment commander aux commerces autour de chez vous pendant le confinement ? | Shop Must Go On</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Retrouvez tous les commerces et restaurants de votre ville sur <b>Shop Must Go On</b> ainsi que les informations pour continuer à commander chez eux pendant cette période.">
+    <meta name="keywords" content="commerces, boutiques, confinement, restaurants, commander, proximité, Shop must go on">
+    <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
     <!-- Bootstrap -->
@@ -12,9 +20,6 @@
     <!-- Feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="{% static 'main_app/main.css' %}">
-    <meta charset="UTF-8">
-    <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
-    <title>Shop Must Go On</title>
 
         <!-- favicon -->
     <link rel="shortcut icon" type="image/svg" href="{% static 'main_app/logo_no_text.svg' %}" />
@@ -36,14 +41,9 @@
         font-style: normal;
     }
 
-    body, html {
-      height: 100%;
-      margin: 0;
-    }
-
     .bg {
       /* The image used */
-      background-image: linear-gradient(rgba(4,0,60,0.71), rgba(4,0,60,0.71)), url("{% static 'main_app/clark-street-mercantile-P3pI6xzovu0-unsplash.jpg'  %}");
+      background-image: linear-gradient(rgba(4,0,60,0.71), rgba(4,0,60,0.71)), url("{% static 'main_app/clark-street-mercantile-P3pI6xzovu0-unsplash-compressed.jpg'  %}");
 
       /* Full height */
       height: 100%;
@@ -83,7 +83,7 @@
       </li>
 
       <li class="nav-item mr-5">
-          <a class="nav-link" href="mailto:contact@shop-must-go-on.fr"> <i data-feather="mail"></i> <span class="ml-2" style="vertical-align: middle;"> Nous contacter</span></a>
+          <a class="nav-link" href="mailto:timothe@shop-must-go-on.fr"> <i data-feather="mail"></i> <span class="ml-2" style="vertical-align: middle;"> Nous contacter</span></a>
       </li>
 
       <li class="nav-item mr-5">

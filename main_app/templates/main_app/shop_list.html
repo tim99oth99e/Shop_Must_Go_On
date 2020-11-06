@@ -1,5 +1,12 @@
 {% extends "main_app/base_2.html" %}
 
+{% block seo_info %}
+    <title>Comment commander chez les commerçants et restaurateurs de {{city_name}} pendant le confinement ?</title>
+
+    <meta name="description" content="Trouvez toutes les informations pour commander aux commerces et restaurants de {{city_name}} pendant cette période.">
+    <meta name="keywords" content="{{city_name}}, commerces, boutiques, confinement, restaurants, commander, proximité, Shop must go on">
+{% endblock seo_info  %}
+
 {% block title %}
         <h1 class="text-center mb-0 title-page" style="font-family: 'redwingmedium'; color:white">Les commerces de <span style="color:#00FFA6">{{ city_name }}</span> </h1>
 {% endblock title %}

@@ -25,7 +25,7 @@ SECRET_KEY = '157_)oajc_l2#-#0+jjm90$_#^c-%i1+46&_qfk$e(!4*fuxy$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+ADMIN = [('tim99oth99e', 'timchaumont@gmail.com'), ('tim99oth99e', 'timothe@shop-must-go-on.fr')]
 ALLOWED_HOSTS = []
 
 
